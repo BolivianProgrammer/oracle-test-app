@@ -1,0 +1,2 @@
+# Shell scripts must keep Linux line endings or bash on the VM will fail
+*.sh text eol=lf

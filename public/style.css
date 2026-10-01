@@ -1,0 +1,124 @@
+:root {
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --accent: #c74634;
+  --ok: #15803d;
+  --bad: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1917;
+    --card: #292524;
+    --text: #f5f5f4;
+    --muted: #a8a29e;
+    --border: #44403c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 32px 16px 8px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header h1 { margin: 0; color: var(--accent); }
+header p { margin: 4px 0 12px; color: var(--muted); }
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card h2 { margin-top: 0; font-size: 1.1rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.grid div { border-left: 3px solid var(--accent); padding-left: 10px; }
+.grid dt { font-size: 0.8rem; color: var(--muted); }
+.grid dd { margin: 2px 0 0; font-weight: 600; word-break: break-word; }
+
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+input, button {
+  font: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+input[type="text"] { flex: 1; min-width: 180px; }
+input[type="number"] { width: 80px; }
+
+button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover { opacity: 0.9; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: var(--muted);
+  color: #fff;
+}
+
+.badge.ok { background: var(--ok); }
+.badge.bad { background: var(--bad); }
+
+.hint { color: var(--muted); font-size: 0.8rem; margin-bottom: 0; }
+.mono { font-family: ui-monospace, Consolas, monospace; }
+
+#tasks { list-style: none; padding: 0; margin: 16px 0 0; }
+
+#tasks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+#tasks li span { flex: 1; }
+#tasks li.done span { text-decoration: line-through; color: var(--muted); }
+
+#tasks li button {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 4px 8px;
+}

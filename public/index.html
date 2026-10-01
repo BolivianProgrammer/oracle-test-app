@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCI Test App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>OCI Test App</h1>
+    <p>Node.js + Express running on an Oracle Cloud instance</p>
+    <span id="status" class="badge">checking…</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Server</h2>
+      <dl id="info" class="grid"></dl>
+      <p class="hint">Refreshes every 3 seconds.</p>
+    </section>
+
+    <section class="card">
+      <h2>CPU test</h2>
+      <p>Computes Fibonacci(n) recursively on the server and reports how long it took.</p>
+      <form id="compute-form" class="row">
+        <label>n <input id="n" type="number" min="1" max="32" value="30" /></label>
+        <button type="submit">Run</button>
+      </form>
+      <p id="compute-result" class="mono"></p>
+    </section>
+
+    <section class="card">
+      <h2>Tasks</h2>
+      <form id="task-form" class="row">
+        <input id="task-title" type="text" placeholder="New task…" maxlength="200" required />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="tasks"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
